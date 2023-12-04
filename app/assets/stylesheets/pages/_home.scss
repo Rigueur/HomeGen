@@ -1,1 +1,62 @@
-// Specific CSS for your home-page
+.home-conteneur {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #EAF1F7;
+}
+
+.brand-name-conteneur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 70vw;
+  height: 25%;
+  top: 50px;
+  right: 30px;
+}
+
+.brand-name-conteneur h1 {
+  font-family: 'Krona One';
+  font-size: 140px;
+  color: #25316D;
+  margin: 0;
+}
+
+.brand-name-conteneur h2 {
+  font-family: 'Krona One';
+  font-size: 34px;
+  color: #363062;
+}
+
+.ellipse-picture {
+  background-image: url('https://i.imgur.com/2nnFESN.png');
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: -200px;
+  left: -175px;
+  width: 800px;
+  height: 1200px;
+  border-radius: 50%;
+  transform: rotate();
+}
+
+.search-phrase-conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50vw;
+  height: 55%;
+  bottom: 50px;
+  right: 40px;
+}
+
+.search-phrase-conteneur p {
+  font-family: 'Krona One';
+  font-size: 46px;
+  color: #25316D;
+  line-height: 1.8;
+}
