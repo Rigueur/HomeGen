@@ -1,0 +1,97 @@
+.conteneur-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 90px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.flat-card {
+  height: 370px;
+}
+
+.top-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flat-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flat-profile p {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.flat-locality {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flat-locality p {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.flat-picture {
+  height: 75%;
+  background-image: url("https://i.imgur.com/NT5I8Yz.png");
+  background-size: cover;
+}
+
+.flat-icons-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.flat-icons-price p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.flat-icons-price i {
+  margin: 0;
+  margin-right:9px;
+}
+
+.bottom-card {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 0.4px black;
+}
+
+.bottom-card p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.bottom-card h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+//
+
+.title-conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 150px;
+}
+
+.title-conteneur h2 {
+  font-family: 'Krona One';
+  color: #25316D;
+  font-size: 30px;
+}
