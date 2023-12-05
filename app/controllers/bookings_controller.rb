@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     if @booking.save
-      redirect_to flats
+      redirect_to @flat
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,13 +28,14 @@ class BookingsController < ApplicationController
   def update
     @booking = current_user.bookings.find(params[:id])
     @booking.update(booking_params)
-    redirect_to flats
+    redirect_to @booking
   end
 
-  def destroy
+  def cancel
     @booking = current_user.bookings.find(params[:id])
-    @booking.destroy
-    redirect_to flats
+    @booking.cancelled = true
+    @booking.save
+    redirect_to @booking
   end
 
   private
@@ -44,6 +45,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:comment, :movie_id, :list_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
