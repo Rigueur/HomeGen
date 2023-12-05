@@ -30,4 +30,8 @@ Flat.new(name: "Flat 9", location: "Toronto", description: "Suburban flat", pric
 Flat.new(name: "Flat 10", location: "Dubai", description: "Luxury flat", price_per_month: 2000, autonomy_level: 5, user_id: User.last.id).save
 Flat.new(name: "Flat 11", location: "Singapore", description: "High-rise flat", price_per_month: 1800, autonomy_level: 3, user_id: User.last.id).save
 
+puts "Creating bookings..."
+Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.first.id, user_id: User.last.id).save!
+Booking.new(start_date: "2021-02-01", end_date: "2021-02-28", flat_id: Flat.first.id, user_id: User.last.id).save
+
 puts "all done!"
