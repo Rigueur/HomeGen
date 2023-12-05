@@ -1,13 +1,13 @@
 .conteneur-grille {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 90px;
+  gap: 100px;
   margin-left: 70px;
   margin-right: 70px;
 }
 
 .flat-card {
-  height: 370px;
+  height: 400px;
 }
 
 .top-card {
@@ -40,6 +40,7 @@
 }
 
 .flat-picture {
+  border-radius: 10px;
   height: 75%;
   background-image: url("https://i.imgur.com/NT5I8Yz.png");
   background-size: cover;
@@ -49,7 +50,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 10px;
+  border-bottom: solid 0.5px black;
+  padding-bottom: 10px;
 }
 
 .flat-icons-price p {
@@ -63,7 +66,8 @@
 }
 
 .bottom-card {
-  margin-top: 4px;
+  height: 30px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,7 +84,7 @@
   font-size: 20px;
 }
 
-//
+
 
 .title-conteneur {
   display: flex;
