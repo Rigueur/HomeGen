@@ -17,6 +17,22 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "first-name" }%>
+    <%= f.input :last_name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "last-name" }%>
+    <%= f.input :age,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "age" }%>
+    <%= f.input :skills,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "skills" }%>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
