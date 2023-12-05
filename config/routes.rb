@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the routes for flats
 
   resources :flats do
-    resources :bookings, only: [:index, :new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
   # Defines the routes for bookings
