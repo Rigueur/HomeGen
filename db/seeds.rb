@@ -15,7 +15,7 @@ Flat.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63).save!
+User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63, avatar_url: "https://images6.fanpop.com/image/photos/33100000/Snoopy-wallpaper-snoopy-33124746-1024-768.jpg").save!
 
 puts "Creating flats..."
 Flat.new(name: "Flat 1", location: "Paris", description: "Nice flat", price_per_month: 1000, autonomy_level: 3, user_id: User.last.id).save!
