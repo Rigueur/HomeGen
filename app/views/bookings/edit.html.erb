@@ -1,0 +1,7 @@
+<%= simple_form_for(@booking) do |f|%>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Cancel booking', cancel_booking_path(@booking), data: { turbo_method: :patch, turbo_confirm: "Are you sure?"} %>

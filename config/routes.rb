@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  devise_for :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get "/flats", to: "pages#flats"
@@ -8,5 +9,16 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root to: "pages#home"
+
+  # Defines the routes for flats
+
+  resources :flats do
+    resources :bookings, only: [:new, :create]
+  end
+
+  # Defines the routes for bookings
+  resources :bookings, only: [:show, :edit, :update]
+
+  patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
