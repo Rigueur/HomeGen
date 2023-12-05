@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   # Defines the routes for flats
 
   resources :flats do
-    resources :bookings, only: [:index, :new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
   # Defines the routes for bookings
-  resources :bookings, only: [:show, :edit, :update, :destroy]
+  resources :bookings, only: [:show, :edit, :update]
+
+  patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
