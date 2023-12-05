@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # Defines the routes for flats
+
   resources :flats do
     resources :bookings, only: [:index, :new, :create]
   end
