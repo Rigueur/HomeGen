@@ -2,7 +2,7 @@
   <h2>Résultats pour Nice :</h2>
 </div>
 <% @flats.each_with_index do |flat, index| %>
-  <div>
+  <div class="big-box">
     <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
       <div class="conteneur-card">
         <%if index % 2 == 0 %>
