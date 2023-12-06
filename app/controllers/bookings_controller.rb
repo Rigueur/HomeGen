@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_flat, only: [:new, :create]
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     # we need `flat_id` to associate booking with corresponding flat

@@ -66,7 +66,7 @@
   justify-content: center;
   align-items: center;
   width: 98%;
-  height: 48%;
+  // height: 48%;
 }
 
 .description-card {
@@ -96,7 +96,7 @@
   justify-content: space-evenly;
   margin: 8px;
   width: 25%;
-  height: 95%;
+  // height: 95%;
   background-color: #EAF1F7;
   border-radius: 20px;
 }
@@ -106,8 +106,10 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 95%;
-  height: 50%;
+  // height: 50%;
 }
 
 .date-form {
