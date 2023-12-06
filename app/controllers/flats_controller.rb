@@ -3,7 +3,6 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   # À RETENIR
   # - dans notre appli, on a besoin d'un modèle Flat (appartement), donc d'un controlleur Flats (avec un s!)
   # - chaque CONTROLLEUR (Flats) est lié à un MODÈLE (Flat), ce qui nous permet de faire Flat.all, .find, .create...
@@ -13,12 +12,19 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
   def index # Méthode index (URL = /modèle(s) = /flats), qui sert toujours à lister/montrer tous les modèles créés (= tous les appartements !)
 
     @flats = Flat.all # On crée une variable @flats, qui est un array, avec tous les flats dedans (Modèle.all) => (Flat.all)
+    
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show # Méthode show (URL = modèle(s)/:id = /flats/1, /flats/2...), qui sert toujours à montrer un modèle créé en particulier (ici, un appartement)
 
     @flat = Flat.find(params[:id]) # Avec Modèle.find(params[:id]), on peut trouver un seul Flat, qu'on met dans la variable @flat.
-
+    @markers = [{lat: @flat.latitude, lng: @flat.longitude}]
   end
 
   def new # Méthode new (URL = modèle(s)/new = flats/new), qui sert toujours à récupérer les infos pour créer un nouveau Modèle (nouveau Flat)

@@ -10,13 +10,14 @@
 
 # cleaning the database
 puts "Cleaning the database..."
+Review.destroy_all
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
-Review.destroy_all
 
 puts "Creating users..."
 User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63, avatar_url: "https://images6.fanpop.com/image/photos/33100000/Snoopy-wallpaper-snoopy-33124746-1024-768.jpg").save!
+User.new(email: "pipicaca@exemple.com", password: "pipicaca", first_name: "Pipi", last_name: "Caca", age: 19, avatar_url: "https://drawinghowtos.com/wp-content/uploads/2022/08/Poop-Emoji-colored.jpg").save!
 
 puts "Creating flats..."
 Flat.new(name: "Flat 1", location: "Paris", description: "Nice flat", price_per_month: 1000, autonomy_level: 3, user_id: User.last.id).save!
@@ -32,7 +33,7 @@ Flat.new(name: "Flat 10", location: "Dubai", description: "Luxury flat", price_p
 Flat.new(name: "Flat 11", location: "Singapore", description: "High-rise flat", price_per_month: 1800, autonomy_level: 3, user_id: User.last.id).save
 
 puts "Creating bookings..."
-Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.first.id, user_id: User.last.id).save!
+Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.second.id, user_id: User.last.id).save!
 Booking.new(start_date: "2021-02-01", end_date: "2021-02-28", flat_id: Flat.first.id, user_id: User.last.id).save
 
 puts "Creating reviews..."
