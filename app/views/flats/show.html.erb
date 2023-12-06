@@ -24,18 +24,35 @@
         <h2><%= @flat.name %></h2>
       </div>
       <div class="section-description">
-        <p>Hébergé par <i><%= @flat.user.email %></i></p>
+        <i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i>
+        <p><strong>4.8 en moyenne</strong></p>
+      </div>
+      <div class="section-description">
+        <i class="fa-solid fa-location-pin fa-lg" style="color: #25316d;"></i>
+        <p><%= @flat.location %></p>
+      </div>
+      <div class="section-description">
+        <i class="fa-solid fa-house fa-lg" style="color: brown;"></i>
+        <p>Hébergé par <i><%= @flat.user.first_name %></i></p>
       </div>
       <div class="section-description">
         <p><%= @flat.description %></p>
       </div>
       <div class="section-description">
+        <i class="fa-solid fa-battery fa-lg" style="color: green;"></i>
         <p><strong>Autonomie : <%= @flat.autonomy_level %>/5</strong></p>
+      </div>
+      <div class="section-description">
+        <p><i class="fa-solid fa-user fa-lg" style="color: brown;"></i> À propos de <i><%= @flat.user.first_name %></i> : Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. (biographie)</p>
+      </div>
+      <div class="section-description">
+        <i class="fa-solid fa-map fa-lg" style="color: blue;"></i>
+        <div class="map-display"></div>
       </div>
     </div>
     <div class="book-card">
       <div class="section-book">
-        <h4><strong><%= @flat.price_per_month %>€ /mois</strong></h4>
+        <h4><strong><%= @flat.price_per_month %>€ / mois</strong></h4>
         <% @booking = Booking.new %>
         <%= simple_form_for [@flat, @booking] do |f| %>
           <%= f.input :start_date,
