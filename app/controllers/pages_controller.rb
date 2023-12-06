@@ -3,7 +3,4 @@ class PagesController < ApplicationController
   def home
     @hidenavbar = true
   end
-
-  def flats
-  end
 end

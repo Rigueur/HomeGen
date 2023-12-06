@@ -1,7 +1,55 @@
-<%= @flat.name %>
-<%= @flat.description %>
-<%= @flat.price_per_month %>
-<%= @flat.autonomy_level %>
-<%= @flat.user.email %>
+<div class="flat-conteneur">
+  <div class="pictures-conteneur">
+    <div class="picture-principale">
+      <p>Picture here...</p>
+    </div>
+    <div class="picture-grille">
+      <div class="picture-left-top">
+        <p>Picture here...</p>
+      </div>
+      <div class="picture-right-top">
+        <p>Picture here...</p>
+      </div>
+      <div class="picture-left-down">
+        <p>Picture here...</p>
+      </div>
+      <div class="picture-right-down">
+        <p>Picture here...</p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-conteneur">
+    <div class="description-card">
+      <div class="section-description">
+        <h2><%= @flat.name %></h2>
+      </div>
+      <div class="section-description">
+        <p>Hébergé par <i><%= @flat.user.email %></i></p>
+      </div>
+      <div class="section-description">
+        <p><%= @flat.description %></p>
+      </div>
+      <div class="section-description">
+        <p><strong>Autonomie : <%= @flat.autonomy_level %>/5</strong></p>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class="section-book">
+        <h4><strong><%= @flat.price_per_month %>€ /mois</strong></h4>
+      </div>
+      <div class="section-book">
+        <div class="date-form"><p>du...</p></div>
+        <div class="date-form"><p>au...</p></div>
+      </div>
+      <div class="section-book">
+        <button class="btn btn-primary">Hello</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="map-conteneur">
+  <div class="map-display">
+  </div>
+</div>
 
 <%= link_to "Edit", edit_flat_path(@flat) %>

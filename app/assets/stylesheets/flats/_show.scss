@@ -1,0 +1,138 @@
+.flat-conteneur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  height: 650px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.pictures-conteneur {
+  display: flex;
+  align-items: center;
+  width: 98%;
+  height: 48%;
+  margin-bottom: 10px;
+}
+
+.picture-principale {
+  margin: 8px;
+  width: 49%;
+  height: 95%;
+  background-color: grey;
+  border-radius: 20px 0 0 20px ;
+}
+
+.picture-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 8px;
+  margin-left: 4px;
+  width: 49%;
+  height: 95%;
+}
+
+.picture-left-top {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+}
+
+.picture-right-top {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 20px 0 0;
+}
+
+.picture-left-down {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+}
+
+.picture-right-down {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 20px 0;
+}
+
+.bottom-conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 48%;
+}
+
+.description-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  margin: 8px;
+  width: 75%;
+  height: 95%;
+  border-radius: 20px;
+}
+
+.section-description {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 95%;
+  height: fit-content;
+  padding: 10px;
+  border-bottom: solid 0.5px black;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 8px;
+  width: 25%;
+  height: 95%;
+  background-color: #EAF1F7;
+  border-radius: 20px;
+}
+
+.section-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 95%;
+  height: 50%;
+}
+
+.date-form {
+  width: 60%;
+  height: 30%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.map-conteneur {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: left;
+  width: 85vw;
+  height: 650px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.map-display {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  height: 48%;
+  background-color: white;
+  margin: 10px;
+}
