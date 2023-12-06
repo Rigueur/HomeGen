@@ -59,4 +59,12 @@
   </div>
 </div>
 
+
+  <% @flat.bookings.each do |booking| %>
+  <% booking.reviews.each do |review| %>
+  <%= review.content %>
+  <%=  review.rating %>
+  <% end %>
+  <% end %>
+
 <%= link_to "Edit", edit_flat_path(@flat) %>

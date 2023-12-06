@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
 
   # Defines the routes for bookings
-  resources :bookings, only: [:show, :edit, :update]
+  resources :bookings, only: [:show, :edit, :update] do
+    resources :reviews, only: [:new, :create]
+  end
 
   patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
