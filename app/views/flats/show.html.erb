@@ -36,13 +36,20 @@
     <div class="book-card">
       <div class="section-book">
         <h4><strong><%= @flat.price_per_month %>€ /mois</strong></h4>
-      </div>
-      <div class="section-book">
-        <div class="date-form"><p>du...</p></div>
-        <div class="date-form"><p>au...</p></div>
-      </div>
-      <div class="section-book">
-        <button class="btn btn-primary">Hello</button>
+        <% @booking = Booking.new %>
+        <%= simple_form_for [@flat, @booking] do |f| %>
+          <%= f.input :start_date,
+              label: "Du :",
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+          <%= f.input :end_date,
+              label: "Au :",
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+          <div class="d-flex justify-content-center">
+          <%= f.submit "Book", class: "btn btn-outline-dark" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
