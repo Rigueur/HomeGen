@@ -1,0 +1,9 @@
+
+<% @favorites.each do |favorite| %>
+  <div>
+    <h2><%= favorite.flat.name %></h2>
+    <p><%= favorite.flat.description %></p>
+    <p><%= favorite.flat.location %></p>
+    <p><%= favorite.flat.pictures %></p>
+  </div>
+<% end %>

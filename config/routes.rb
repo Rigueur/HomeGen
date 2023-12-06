@@ -13,7 +13,14 @@ Rails.application.routes.draw do
 
   resources :flats do
     resources :bookings, only: [:new, :create]
+    resources :favorites, only: [:create]
   end
+
+  resources :users do
+    resources :favorites, only: [:index]
+  end
+
+
 
   # Defines the routes for bookings
   resources :bookings, only: [:show, :edit, :update] do

@@ -17,11 +17,15 @@
                 <p><%=flat.location%></p>
               </div>
             </div>
-            <div class="flat-picture" style='background-image: url("https://i.imgur.com/NT5I8Yz.png");'>
+            <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
             </div>
             <div class="flat-icons-price">
               <div class="card-icons">
-                <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+
+                  <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
+                  <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                <% end %>
+
                 <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
                 <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>
               </div>
@@ -52,11 +56,13 @@
                 <p><%=flat.location%></p>
               </div>
             </div>
-            <div class="flat-picture" style='background-image: url("https://i.imgur.com/NT5I8Yz.png");'>
+            <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
             </div>
             <div class="flat-icons-price">
               <div class="card-icons">
-                <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
+                  <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                <% end %>
                 <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
                 <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>
               </div>
