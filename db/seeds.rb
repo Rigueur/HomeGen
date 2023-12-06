@@ -18,6 +18,7 @@ User.destroy_all
 
 puts "Creating users..."
 User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63, avatar_url: "https://images6.fanpop.com/image/photos/33100000/Snoopy-wallpaper-snoopy-33124746-1024-768.jpg").save!
+User.new(email: "pipicaca@exemple.com", password: "pipicaca", first_name: "Pipi", last_name: "Caca", age: 19, avatar_url: "https://drawinghowtos.com/wp-content/uploads/2022/08/Poop-Emoji-colored.jpg").save!
 
 
 puts "Creating flats..."
@@ -34,7 +35,7 @@ Flat.new(name: "Room available", location: "Dubai", description: "Luxury flat", 
 Flat.new(name: "Looking for a calm student", location: "Singapore", description: "High-rise flat", price_per_month: 400, autonomy_level: 3, user_id: User.last.id, pictures: "https://www.vitastudent.com/wp-content/uploads/2023/01/VITASTUDENT_PROFILES_NOV2021_130-scaled.jpg").save
 
 puts "Creating bookings..."
-Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.first.id, user_id: User.last.id).save!
+Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.second.id, user_id: User.last.id).save!
 Booking.new(start_date: "2021-02-01", end_date: "2021-02-28", flat_id: Flat.first.id, user_id: User.last.id).save
 
 puts "Creating reviews..."

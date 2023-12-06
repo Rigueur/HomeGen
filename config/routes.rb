@@ -27,5 +27,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
+  resources :users do
+    resources :bookings, only: [:index]
+  end
+
   patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
