@@ -1,0 +1,9 @@
+<ul>
+<% @bookings.each do |booking| %>
+  <li><%= booking.flat.name %></li>
+  <li><%= booking.flat.location %></li>
+  <li><%= booking.flat.description %></li>
+  <li><%= booking.start_date%></li>
+  <li><%= booking.end_date %></li>
+<% end %>
+</ul>
