@@ -1,11 +1,18 @@
+.big-box {
+  width: 1000px;
+  height: 370px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
 .conteneur-card {
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 350px;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 20px;
+  width: 1000px;
+  margin-bottom: 30px;
 }
 
 .flat-descr {
@@ -14,7 +21,7 @@
   justify-content: space-between;
   align-items: left;
   height: 95%;
-  width: 500px;
+  width: 50%;
 }
 
 .flat-descr h2 {
@@ -27,6 +34,7 @@
   color: #25316D;
   font-family: 'Krona One';
   font-size: 15px;
+  margin-bottom: 13px;
 }
 
 .flat-descr p {
@@ -36,8 +44,8 @@
 }
 
 .flat-card {
-  height: 345px;
-  width: 360px;
+  height: 95%;
+  width: 35%;
 }
 
 .top-card {
@@ -91,25 +99,6 @@
 .flat-icons-price i {
   margin: 0;
   margin-right:9px;
-}
-
-.bottom-card {
-  height: 30px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 0.4px black;
-}
-
-.bottom-card p {
-  margin: 0;
-  font-size: 15px;
-}
-
-.bottom-card h4 {
-  margin: 0;
-  font-size: 20px;
 }
 
 .title-conteneur {
