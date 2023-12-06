@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_06_101618) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_133956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_101618) do
     t.boolean "cancelled", default: false
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "flat_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_favorites_on_flat_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -70,6 +79,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_101618) do
 
   add_foreign_key "bookings", "flats"
   add_foreign_key "bookings", "users"
+  add_foreign_key "favorites", "flats"
+  add_foreign_key "favorites", "users"
   add_foreign_key "flats", "users"
   add_foreign_key "reviews", "bookings"
 end
