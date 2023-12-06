@@ -13,6 +13,7 @@ puts "Cleaning the database..."
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
+Review.destroy_all
 
 puts "Creating users..."
 User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63, avatar_url: "https://images6.fanpop.com/image/photos/33100000/Snoopy-wallpaper-snoopy-33124746-1024-768.jpg").save!
@@ -33,5 +34,8 @@ Flat.new(name: "Flat 11", location: "Singapore", description: "High-rise flat", 
 puts "Creating bookings..."
 Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.first.id, user_id: User.last.id).save!
 Booking.new(start_date: "2021-02-01", end_date: "2021-02-28", flat_id: Flat.first.id, user_id: User.last.id).save
+
+puts "Creating reviews..."
+Review.new(content: "super appartment", rating: 5, booking_id: Booking.first.id).save!
 
 puts "all done!"
