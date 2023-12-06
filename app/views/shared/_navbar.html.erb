@@ -20,7 +20,9 @@
       <i class="fa-solid fa-sliders fa-xl" style="color: #25316d;"></i>
     </div>
     <div class="nav-items-icons">
-      <i class="fa-solid fa-heart fa-xl" style="color: #25316d;"></i>
+      <%= link_to current_user ? user_favorites_path(current_user) : new_user_session_path do %>
+        <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+      <% end %>
       <i class="fa-solid fa-user fa-xl" style="color: #25316d;"></i>
     </div>
   </div>
