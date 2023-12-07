@@ -24,6 +24,7 @@
         <h2><%= @flat.name %>   <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post} do %>
             <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
           <% end %>
+          <%= link_to "Edit", edit_flat_path(@flat) %>
         </h2>
       </div>
       <div class="section-description">
@@ -54,12 +55,14 @@
           <div class="map-display" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
         </div>
-        <% @flat.bookings.each do |booking| %>
-          <% booking.reviews.each do |review| %>
-            <%= review.content %>
-            <%= review.rating %>
+        <div>
+          <% @flat.bookings.each do |booking| %>
+            <% booking.reviews.each do |review| %>
+              <%= review.content %> <br>
+              Rating : <%= review.rating %> / 5
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
 
     <div class="book-card">
@@ -84,5 +87,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Edit", edit_flat_path(@flat) %>
