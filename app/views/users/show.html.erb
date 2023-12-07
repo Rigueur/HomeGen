@@ -1,8 +1,45 @@
-<div>
-  <div style="height:200px; width:200px; background-image: url(<%= @user.avatar_url %>); background-size: cover; background-position: center"></div>
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <p>Email: <%= @user.email %></p>
-  <p>Skills: <%= @user.skills %></p>
-  <p>Biography: <%= @user.biography %></p>
-  <%= link_to "Edit", edit_user_registration_path %>
+<div class="container mt-5 h-75 w-75">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card p-3 py-4 bg-light h-100 w-100">
+                <div class="text-center">
+                    <img src="<%= @user.avatar_url %>" width="150" height="150" class="rounded-circle" style="object-fit: cover;">
+                </div>
+                <div class="text-center mt-3">
+                    <span class="bg-dark px-4 py-2 mt-2 mb-2 rounded text-white">Host</span>
+                    <h5 class="mt-4 mb-0" style="font-family: 'Krona One'"><%= @user.first_name %> <%= @user.last_name %></h5>
+                    <div class="px-4 mt-3">
+                        <p><%= @user.biography %></p>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn"><%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-primary px-4" %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mt-5">
+            <div class="card p-3 py-4 bg-light h-100 w-100">
+                <div class="px-4 d-flex justify-content-left">
+                    <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-wand-magic-sparkles" style="color: #25316D"></i>  Skills:</h5>
+                    <p class="ms-2 mb-0"><%= @user.skills %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mt-5">
+            <div class="card p-3 py-4 bg-light h-100 w-100">
+                <div class="px-4 d-flex justify-content-left">
+                    <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-envelope" style="color: #25316D"></i>  Email :</h5>
+                    <p class="ms-2 mb-0"><%= @user.email %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mt-5 mb-5">
+            <div class="card p-3 py-4 bg-light h-100 w-100">
+                <div class="px-4 d-flex justify-content-left">
+                    <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-house" style="color: #25316D"></i>  Flat :</h5>
+                    <p class="ms-2 mb-0"><%= link_to @user.flats.name, flat_path(@user.flats) %></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
