@@ -18,7 +18,11 @@ User.destroy_all
 
 puts "Creating users..."
 User.new(email: "admin@exemple.com", password: "123456", first_name: "Toto", last_name: "Tata", age: 63, avatar_url: "https://images6.fanpop.com/image/photos/33100000/Snoopy-wallpaper-snoopy-33124746-1024-768.jpg").save!
-User.new(email: "pipicaca@exemple.com", password: "pipicaca", first_name: "Pipi", last_name: "Caca", age: 19, avatar_url: "https://drawinghowtos.com/wp-content/uploads/2022/08/Poop-Emoji-colored.jpg").save!
+User.new(email: "nicolemanzotti@exemple.com", password: "nicolemanzotti", first_name: "Nicole", last_name: "Manzotti", age: 81, avatar_url: "https://rscj.org/files/mary_louise_mamie_jenkins_rscj_-_copy.jpg").save!
+User.new(email: "jeanrenault@exemple.com", password: "jeanrenault", first_name: "Jean", last_name: "Renault", age: 71, avatar_url: "https://hotnewsinworld.com/fr/wp-content/uploads/sites/12/2020/11/Ce-nest-pas-un-petit-blanc-bec-de-56-ans-qui-va.jpg").save!
+User.new(email: "jeffvernet@exemple.com", password: "jeffvernet", first_name: "Jeff", last_name: "Vernet", age: 71, avatar_url: "https://img.freepik.com/photos-premium/photo-recadree-jeune-homme-dans-son-fauteuil-roulant-cree-ia-generative_762026-24180.jpg
+  ").save!
+
 
 
 puts "Creating flats..."
