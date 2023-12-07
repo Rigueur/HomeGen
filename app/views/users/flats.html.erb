@@ -6,7 +6,7 @@
   <li>Autonimie: <%= flat.autonomy_level %></li>
   <li>Prix: <%= flat.price_per_month %></li>
   <% if flat.user == current_user %>
-    <%= link_to 'Delete', flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   <% end %>
 <% end  %>
 
