@@ -10,9 +10,10 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new
     @favorite.flat = @flat
     @favorite.user = current_user
-    @favorite.save
-
-    redirect_to user_favorites_path(current_user)
+    if @favorite.save
+      flash.notice = "Ajouté aux favoris !"
+    else
+      flash.alert = "Vous devez être connecté pour ajouter un favori"
+    end
   end
-
 end
