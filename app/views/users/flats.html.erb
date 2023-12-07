@@ -75,4 +75,11 @@
     <%= link_to 'Delete', flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </div>
   <% end %>
+  <% if flat.bookings.any? %>
+    <ul>
+    <% flat.bookings.each do |booking| %>
+      <li>Réservé du <%= booking.start_date %> au <%= booking.end_date %></li>
+    <% end %>
+    </ul>
+  <% end %>
 <% end  %>
