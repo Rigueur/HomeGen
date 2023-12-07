@@ -1,5 +1,6 @@
 <ul>
 <% @bookings.each do |booking| %>
+  <li><%= image_tag booking.flat.pictures %></li>
   <li><%= booking.flat.name %></li>
   <li><%= booking.flat.location %></li>
   <li><%= booking.flat.description %></li>
