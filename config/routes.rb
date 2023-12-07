@@ -16,17 +16,14 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
   end
 
-  resources :users do
+  resources :users, only:[:show, :edit, :update] do
     resources :favorites, only: [:index]
+    resources :bookings, only: [:index]
   end
 
   # Defines the routes for bookings
   resources :bookings, only: [:show, :edit, :update] do
     resources :reviews, only: [:new, :create]
-  end
-
-  resources :users do
-    resources :bookings, only: [:index]
   end
 
   patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
