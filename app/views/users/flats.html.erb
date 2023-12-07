@@ -1,7 +1,7 @@
 <% @flats.each do |flat|%>
 <div class="flat-conteneur">
   <div class="pictures-conteneur">
-    <div class="picture-principale" style="background-image: url(<%= image_path flat.pictures %>); background-size: cover;">
+    <div class="picture-principale" style="background-image: url(<%= image_path flat.pictures.split(" ")[0] %>); background-size: cover;">
     </div>
     <div class="picture-grille">
       <div class="picture-left-top">
