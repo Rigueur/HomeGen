@@ -59,17 +59,6 @@ Booking.new(start_date: "2023-06-10", end_date: "2023-07-20", flat_id: Flat.all[
 Booking.new(start_date: "2023-04-15", end_date: "2023-05-28", flat_id: Flat.all[2].id, user_id: User.all[11].id).save!
 
 puts "Creating reviews..."
-# Review.new(content: "Appartement incroyablement confortable et bien meublé. Séjour excellent !", rating: 5, booking_id: Booking.first.id).save!
-# Review.new(content: "Endroit charmant avec une vue fantastique. J'ai adoré chaque instant de mon séjour.", rating: 4, booking_id: Booking.first.id).save!
-# Review.new(content: "Emplacement idéal, chambre spacieuse et hôtes sympathiques. Hautement recommandé !", rating: 5, booking_id: Booking.first.id).save!
-# Review.new(content: "Propre et confortable. Parfait pour un séjour relaxant. Je reviendrai !", rating: 4, booking_id: Booking.first.id).save!
-# Review.new(content: "Ambiance charmante, proche de tout. Une expérience merveilleuse dans l'ensemble.", rating: 5, booking_id: Booking.first.id).save!
-# Review.new(content: "Design moderne, quartier calme. Impressionné par les commodités.", rating: 4, booking_id: Booking.first.id).save!
-# Review.new(content: "Idéal pour les étudiants ! Chambre confortable, excellent environnement d'étude.", rating: 3, booking_id: Booking.first.id).save!
-# Review.new(content: "Vue exceptionnelle sur le jardin, paisible et serein. Je recommanderai à mes amis.", rating: 5, booking_id: Booking.first.id).save!
-# Review.new(content: "Emplacement parfait près des sites historiques. Chambre spacieuse et confortable.", rating: 4, booking_id: Booking.first.id).save!
-# Review.new(content: "Séjour exceptionnel, hôtes fantastiques. On se sentait comme chez soi loin de chez soi.", rating: 5, booking_id: Booking.first.id).save!
-# Review.new(content: "Charmant studio avec tout le nécessaire. Séjour agréable et hôte sympathique.", rating: 4, booking_id: Booking.first.id).save!
 Review.new(content: "Appartement incroyablement confortable et bien meublé. Séjour excellent !", rating: 5, booking_id: Booking.all[3].id).save!
 Review.new(content: "Endroit charmant avec une vue fantastique. J'ai adoré chaque instant de mon séjour.", rating: 4, booking_id: Booking.all[7].id).save!
 Review.new(content: "Emplacement idéal, chambre spacieuse et hôtes sympathiques. Hautement recommandé !", rating: 5, booking_id: Booking.all[2].id).save!
