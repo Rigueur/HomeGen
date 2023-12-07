@@ -20,8 +20,6 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
   end
 
-
-
   # Defines the routes for bookings
   resources :bookings, only: [:show, :edit, :update] do
     resources :reviews, only: [:new, :create]

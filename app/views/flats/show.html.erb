@@ -21,7 +21,11 @@
   <div class="bottom-conteneur">
     <div class="description-card">
       <div class="section-description">
-        <h2><%= @flat.name %></h2>
+        <h2><%= @flat.name %>   <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post} do %>
+            <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+          <% end %>
+          <%= link_to "Edit", edit_flat_path(@flat) %>
+        </h2>
       </div>
       <div class="section-description">
         <i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i>
@@ -47,9 +51,20 @@
       </div>
       <div class="section-description">
         <i class="fa-solid fa-map fa-lg" style="color: blue;"></i>
-        <div class="map-display"></div>
+        <div class="map-conteneur">
+          <div class="map-display" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+        </div>
+        <div>
+          <% @flat.bookings.each do |booking| %>
+            <% booking.reviews.each do |review| %>
+              <%= review.content %> <br>
+              Rating : <%= review.rating %> / 5
+            <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
+
     <div class="book-card">
       <div class="section-book">
         <h4><strong><%= @flat.price_per_month %>€ / mois</strong></h4>
@@ -69,25 +84,6 @@
         <% end %>
       </div>
     </div>
+    </div>
   </div>
 </div>
-<div class="mapindex">
-  <div data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
-</div>
-
-
-  <% @flat.bookings.each do |booking| %>
-  <% booking.reviews.each do |review| %>
-  <%= review.content %>
-  <%=  review.rating %>
-  <% end %>
-  <% end %>
-
-
-                  <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post} do %>
-                  <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
-                <% end %>
-
-
-<%= link_to "Edit", edit_flat_path(@flat) %>
