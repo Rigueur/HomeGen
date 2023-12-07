@@ -8,13 +8,37 @@
     <div class="nav-items-search">
       <div class="search-bar">
         <div class="where-search">
-        </div>
-        <div class="when-search">
-        </div>
-        <div class="when-search">
-        </div>
+          <%= form_with url: flats_path, method: :get, class: "d-flex h-100" do %>
+            <%= text_field_tag :query,
+                params[:query],
+                class: "where-search",
+                style: "height: 100%; width: 100%; border: none; padding-left: 10px;",
+                placeholder: "Paris, Marseille, Nice..."
+              %>
+          </div>
+          <div class="when-search">
+            <%= text_field_tag :start_date,
+                params[:start_date],
+                class: "when-search",
+                style: "height: 100%; width: 100%; border: none; padding-left: 10px;",
+                placeholder: "Du...",
+                data: {controller: "datepicker"}
+              %>
+          </div>
+          <div class="when-search">
+            <%= text_field_tag :end_date,
+                  params[:end_date],
+                  class: "when-search",
+                  style: "height: 100%; width: 100%; border: none; padding-left: 10px;",
+                  placeholder: "Au...",
+                  data: {controller: "datepicker"}
+                %>
+          </div>
         <div class="search-icon">
-          <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #25316d;"></i>
+          <%= button_tag(class: "btn") do %>
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #25316d;"></i>
+          <% end %>
+        <% end %>
         </div>
       </div>
       <i class="fa-solid fa-sliders fa-xl" style="color: #25316d;"></i>
@@ -31,7 +55,7 @@
           <% if current_user %>
             <li><a class="dropdown-item" href="#">My Flats</a></li>
             <li><a class="dropdown-item" href="<%= user_bookings_path(current_user) %>">My Bookings</a></li>
-             <li><a class="dropdown-item" href="#">My profile</a></li> <%# user_path(current_user) %>
+             <li><a class="dropdown-item" href="<%= user_path(current_user) %>">My profile</a></li>
             <li><a class="dropdown-item" href="<%= destroy_user_session_path %>" data-turbo-method="delete">Log out</a></li>
           <%else%>
             <li><a class="dropdown-item" href="<%=new_user_session_path%>">Log in</a></li>
