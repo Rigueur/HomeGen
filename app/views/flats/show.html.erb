@@ -47,7 +47,7 @@
         <p><strong>Autonomie : <%= @flat.autonomy_level %>/5</strong></p>
       </div>
       <div class="section-description">
-        <p><i class="fa-solid fa-user fa-lg" style="color: brown;"></i> À propos de <i><%= @flat.user.first_name %></i> : Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. (biographie)</p>
+        <p><i class="fa-solid fa-user fa-lg" style="color: brown;"></i> À propos de <i><%= @flat.user.first_name %></i> : <%= @flat.user.biography %></p>
       </div>
       <div class="section-description">
         <i class="fa-solid fa-map fa-lg" style="color: blue;"></i>
