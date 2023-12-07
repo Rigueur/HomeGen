@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update] do
     resources :favorites, only: [:index]
     resources :bookings, only: [:index]
+    get "/flats", to: "users#flats", as: :user_flats
   end
 
   # Defines the routes for bookings
