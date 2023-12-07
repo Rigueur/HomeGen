@@ -1,0 +1,10 @@
+<% @flats.each do |flat|%>
+<li><%= image_tag flat.pictures %></li>
+<li><%= flat.name %></li>
+<li>Adresse: <%= flat.location %></li>
+<li>Description: <%= flat.description %></li>
+<li>Autonimie: <%= flat.autonomy_level %></li>
+<li>Prix: <%= flat.price_per_month %></li>
+<% end  %>
+
+#http://localhost:3000/users/135/flats
