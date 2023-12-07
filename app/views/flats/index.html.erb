@@ -1,73 +1,55 @@
 <div class="title-conteneur">
-  <h2>Résultats pour Nice :</h2>
+  <h2>Résultats for params[:query] ;)</h2>
 </div>
-<div class="d-flex">
-  <div>
+<%# <div class="d-flex"> %>
+  <%# <div> %>
     <% @flats.each_with_index do |flat, index| %>
-      <div class="big-box">
-        <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
+      <%# <div class="big-box"> %>
+        <a href="<%=flat_path(flat)%>" class= "clickable-div">
           <div class="conteneur-card">
             <%if index % 2 == 0 %>
               <div class="flat-card">
-                <div class="top-card">
-                  <div class="flat-profile">
-                    <img class="avatar" src="<%=flat.user.avatar_url%>">
-                    <p><%=flat.user.first_name%> <%=flat.user.last_name[0]%>.</p>
-                  </div>
-                  <div class="flat-locality">
-                    <i class="fa-solid fa-location-pin" style="color: #25316d;"></i>
-                    <p><%=flat.location%></p>
-                  </div>
-                </div>
                 <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
                 </div>
                 <div class="flat-icons-price">
                   <div class="card-icons">
-                    <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
+                    <%# <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
                       <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
-                    <% end %>
-                    <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
+                    <%# <% end %>
                     <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>
                   </div>
                   <div class="flat-price">
-                    <p><strong><%=flat.price_per_month%>€/mois</strong></p>
+                    <p><strong><%=flat.price_per_month%>€/month</strong></p>
                   </div>
                 </div>
               </div>
               <div class="flat-descr">
                 <h2><%=flat.name%></h2>
                 <p><%=flat.description%></p>
-                <h4>Autonomie : <%=flat.autonomy_level%>/5</h4>
+                <div class="bottom-descr-right">
+                  <h4><i class="fa-solid fa-location-pin" style="color: #25316d;"></i> <%=flat.location%></h4>
+                </div>
               </div>
             <% else %>
               <div class="flat-descr">
                 <h2><%=flat.name%></h2>
                 <p><%=flat.description%></p>
-                <h4>Autonomie : <%=flat.autonomy_level%>/5</h4>
+                <div class="bottom-descr">
+                  <h4><i class="fa-solid fa-location-pin" style="color: #25316d;"></i> <%=flat.location%></h4>
+                </div>
               </div>
               <div class="flat-card">
-                <div class="top-card">
-                  <div class="flat-profile">
-                    <img class="avatar" src="<%=flat.user.avatar_url%>">
-                    <p><%=flat.user.first_name%> <%=flat.user.last_name[0]%>.</p>
-                  </div>
-                  <div class="flat-locality">
-                    <i class="fa-solid fa-location-pin" style="color: #25316d;"></i>
-                    <p><%=flat.location%></p>
-                  </div>
-                </div>
                 <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
                 </div>
                 <div class="flat-icons-price">
                   <div class="card-icons">
-                    <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
+                    <%# <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
                       <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
-                    <% end %>
-                    <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
+                    <%# <% end %>
                     <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>
                   </div>
                   <div class="flat-price">
-                    <p><strong><%=flat.price_per_month%>€/month</strong></p>
+                    <p><%=flat.price_per_month%>€/month</p>
                   </div>
                 </div>
               </div>
@@ -76,12 +58,18 @@
         </a>
         <div class="bordure">
         </div>
-      </div>
+      <%# </div> %>
     <% end %>
-  </div>
-  <div>
-  <div class="mapindex" style="position: sticky;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  </div>
-</div>
+  <%# </div> %>
+  <%# <div> %>
+  <%# <div class="mapindex" style="position: sticky;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value='pk.eyJ1IjoiZGF2aWRhdmlkYXZlIiwiYSI6ImNsbHBsOXFzbzA5NzAzZ3BzaGJ4YTQ0OGoifQ.W5NpxaCm9YIhnFWrE-WMUw'> %>
+  <%# </div>
+  </div> %>
+<%# </div> %>
+<%#
+                  <div class="flat-locality">
+                  </div>
+
+                    <%# <%= link_to flat_favorites_path(flat), data: {turbo_method: :post} do %>
+                      <%# <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i> %>
+                    <%# <% end %>
