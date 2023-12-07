@@ -44,27 +44,59 @@ User.new(email: "jeffvernet@exemple.com", password: "jeffvernet", first_name: "J
 User.new(email: "naomidoukhan@exemple.com", password: "naomidoukhan", first_name: "Naomi", last_name: "Doukhan", age: 24, avatar_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1697727803/rat144jgorblxyngfyvw.jpg").save!
 
 Geocoder.configure(timeout: 5)
+
 puts "Creating flats..."
-Flat.new(name: "Chambre agréable en plein Paris", location: "131 boulevard de grenelle, 75015, Paris", description: "Chambre lumineuse et spacieuse disponible dans un appartement partagé. Idéalement située, proche des transports en commun et des commodités locales. Parfait pour les étudiants ou les jeunes professionnels. L'appartement est entièrement meublé et équipé avec une cuisine moderne et une salle de bain rénovée.", price_per_month: 500, autonomy_level: 3, user_id: User.all[1].id, pictures: "https://www.immojeunepro.com/bundles/boresidence/uploads/documents/760x475/98b28a71f210e42e76673dd4029a76c098380d13-760x475.jpeg").save!
+
+Flat.new(name: "Chambre agréable en plein Paris",
+  location: "131 boulevard de grenelle, 75015, Paris",
+  description: "Chambre lumineuse et spacieuse disponible dans un appartement partagé. Idéalement située, proche des transports en commun et des commodités locales. Parfait pour les étudiants ou les jeunes professionnels. L'appartement est entièrement meublé et équipé avec une cuisine moderne et une salle de bain rénovée.",
+  price_per_month: 500,
+  autonomy_level: 3,
+  user_id: User.all[1].id,
+  pictures: ["https://a0.muscache.com/im/pictures/miso/Hosting-867276180164542060/original/a8478dbd-6309-4665-a7cf-4d58ed2272a2.jpeg?im_w=1200"
+    "https://a0.muscache.com/im/pictures/b9f95931-03cf-4619-8cb1-7ec6aee2ed56.jpg?im_w=720"
+    "https://a0.muscache.com/im/pictures/miso/Hosting-853608306007509621/original/19a3edad-d946-4634-b36b-8772d7035405.jpeg?im_w=720"
+    "https://a0.muscache.com/im/pictures/miso/Hosting-867276180164542060/original/13b9dd63-04b4-43c4-b607-40d2b3a4ad31.jpeg?im_w=720"
+    "https://a0.muscache.com/im/pictures/miso/Hosting-867276180164542060/original/8ff8932a-1b56-4aff-899a-35f2e4ea1c46.jpeg?im_w=720"]).save!
 puts "1"
-Flat.new(name: "Charme près transports", location: "22 Rue de la République, 75001 Paris", description: "Chambre claire et vaste à louer dans un appartement en colocation. Emplacement idéal à proximité des transports publics et des services de proximité. Parfait pour les étudiants ou les jeunes travailleurs. L'appartement est entièrement équipé avec une cuisine moderne et une salle de bain récemment rénovée", price_per_month: 400, autonomy_level: 2, user_id: User.all[2].id, pictures: "https://www.studylease.co.uk/files/residences/residences/images/image_nexity_PO0000062_5ad73d85709e24_PO0000062_90.jpg" ).save
+
+Flat.new(name: "Charme près transports",
+  location: "22 Rue de la République, 75001 Paris",
+  description: "Chambre claire et vaste à louer dans un appartement en colocation. Emplacement idéal à proximité des transports publics et des services de proximité. Parfait pour les étudiants ou les jeunes travailleurs. L'appartement est entièrement équipé avec une cuisine moderne et une salle de bain récemment rénovée",
+  price_per_month: 400,
+  autonomy_level: 2,
+  user_id: User.all[2].id,
+  pictures: ["https://a0.muscache.com/im/pictures/79b46023-fa24-4914-8a3a-bf47a5bafabe.jpg?im_w=1200"
+    "https://a0.muscache.com/im/pictures/96496792-9965-47ed-a383-8ab0d083804f.jpg?im_w=720"
+    "https://a0.muscache.com/im/pictures/a4002e08-d292-4186-bdb9-f266d01beac9.jpg?im_w=720"
+    "https://a0.muscache.com/im/pictures/6ad08afc-d039-40ee-8b24-cf906e18902a.jpg?im_w=720"
+    "https://a0.muscache.com/im/pictures/84afee39-ea2b-4cce-b306-8d93a13de6f2.jpg?im_w=720"]).save
 puts "2"
+
 Flat.new(name: "Vue panoramique centre", location: "34 Rue du Refuge, 13002 Marseille", description: "Location d'une chambre spacieuse et bien éclairée dans un appartement partagé. Située idéalement près des transports et des commodités locales. Idéale pour les étudiants ou les jeunes actifs. L'appartement est entièrement meublé et dispose d'une cuisine moderne et d'une salle de bain rénovée", price_per_month: 600, autonomy_level: 4, user_id: User.all[3].id, pictures: "https://www.passman.fr/wp-content/uploads/2023/10/passenergy-residence-etudiante-e1696258374658.jpg").save
 puts "3"
+
 Flat.new(name: "Cosy proche campus", location: "45 Avenue des Champs-Élysées, 75008 Paris", description: "Chambre grande et lumineuse disponible dans une colocation. Emplacement privilégié à proximité des transports en commun et des commerces de proximité. Convient parfaitement aux étudiants ou aux jeunes professionnels. L'appartement est entièrement meublé et comprend une cuisine moderne et une salle de bain rénovée.", price_per_month: 400, autonomy_level: 3, user_id: User.all[4].id, pictures: "https://www.student-factory.com/media/457/download/StudentFactory_Nice_DSF8115-HDR.jpg?v=1").save
 puts "4"
+
 Flat.new(name: "Spacieux quartier historique", location: "10 Rue du Faubourg Saint-Honoré, 75009 Paris", description: "Propose une chambre spacieuse et lumineuse dans un appartement en colocation. Emplacement stratégique proche des transports et des commodités. Idéal pour étudiants ou jeunes professionnels. L'appartement est entièrement meublé avec une cuisine moderne et une salle de bain rénovée.", price_per_month: 300, autonomy_level: 1, user_id: User.all[5].id, pictures: "https://thumbs.dreamstime.com/z/chambre-%C3%A0-coucher-de-style-de-l-%C3%A9tudiant-simple-de-dortoir-avec-un-bon-nombre-de-lumi%C3%A8re-79798617.jpg").save
 puts "5"
+
 Flat.new(name: "Lumineux ambiance moderne", location: "30 Quai des Belges, 13001 Marseille", description: "Chambre vaste et bien éclairée à disposition dans un appartement partagé. Emplacement parfait, proche des transports en commun et des commodités du quartier. Parfait pour les étudiants ou les jeunes actifs. L'appartement est entièrement meublé et dispose d'une cuisine moderne et d'une salle de bain rénovée", price_per_month: 350, autonomy_level: 2, user_id: User.all[6].id, pictures: "https://amazingarchitecture.com/storage/1790/student_room.jpg").save
 puts "6"
+
 Flat.new(name: "Confortable près commerces", location: "12 Pl. des Augustines, 13002 Marseille", description: "Chambre grande et lumineuse à louer dans une colocation. Idéalement située à proximité des transports en commun et des commerces locaux. Parfaite pour les étudiants ou les jeunes professionnels. L'appartement est entièrement meublé et équipé d'une cuisine moderne et d'une salle de bain rénovée.", price_per_month: 300, autonomy_level: 3, user_id: User.all[7].id, pictures: "https://www.new.ox.ac.uk/sites/default/files/inline-images/Bedroom_0.JPG").save
 puts "7"
+
 Flat.new(name: "Studio élégant meublé", location: "10 Place Bellecour, 69002 Lyon", description: "Grande et lumineuse chambre disponible en colocation. Emplacement idéal à deux pas des transports en commun et des commerces locaux. Parfait pour étudiants et jeunes professionnels. Appartement entièrement meublé, cuisine moderne et salle de bain récemment rénovée.", price_per_month: 600, autonomy_level: 4, user_id: User.all[8].id, pictures: "https://www.nottingham.ac.uk/accommodation/images-multimedia/new-test/room-3.jpg").save
 puts "8"
+
 Flat.new(name: "Calme, vue jardin", location: "25 Rue de la République, 69003 Lyon", description: "Location d'une spacieuse chambre lumineuse au sein d'une colocation bien située, proche des transports et des commerces. Convient parfaitement aux étudiants et jeunes actifs. Appartement entièrement meublé, cuisine moderne et salle de bain récemment refaite.", price_per_month: 250, autonomy_level: 1, user_id: User.all[0].id, pictures: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e800a328914065.55d8b7ced5d02.jpg").save
 puts "9"
+
 Flat.new(name: "Chambre étudiant idéale", location: "18 Quai Pierre-Scize, 69009 Lyon", description: "À louer, une grande chambre lumineuse dans une colocation idéalement située à proximité des transports et des commerces locaux. Parfaite pour les étudiants et jeunes professionnels. Appartement entièrement meublé avec cuisine moderne et salle de bain récemment rénovée.", price_per_month: 800, autonomy_level: 5, user_id: User.all[9].id, pictures: "https://www.cityblock.co.uk/blog/wp-content/uploads/2022/11/34-1024x684.jpg").save
 puts "10"
+
 Flat.new(name: "Cherche Etudiant Discret!", location: "5 Place de la Bastille, 75012 Paris", description: "Chambre spacieuse et lumineuse disponible en colocation. Emplacement idéal à proximité des transports en commun et des commerces locaux, parfait pour les étudiants et jeunes professionnels. Appartement entièrement meublé, cuisine moderne et salle de bain rénovée.", price_per_month: 400, autonomy_level: 3, user_id: User.all[9], pictures: "https://www.vitastudent.com/wp-content/uploads/2023/01/VITASTUDENT_PROFILES_NOV2021_130-scaled.jpg").save
 
 puts "Creating bookings..."
