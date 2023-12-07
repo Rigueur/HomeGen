@@ -44,9 +44,6 @@
 }
 
 .search-phrase-conteneur {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   width: 50vw;
   height: 55%;
@@ -56,7 +53,15 @@
 
 .search-phrase-conteneur p {
   font-family: 'Krona One';
-  font-size: 46px;
+  font-size: 40px;
   color: #25316D;
-  line-height: 1.8;
+  line-height: 90px;
+}
+
+.search-phrase-conteneur .search-index {
+  border: none;
+  padding-left: 10px;
+  height: 70px;
+  width: 330px;
+  background-color: transparent;
 }

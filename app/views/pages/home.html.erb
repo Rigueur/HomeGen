@@ -8,11 +8,39 @@
   </div>
 
   <div class="search-phrase-conteneur">
-    <p>Je ____ un logement,<br>à _____, <br>du _____ au _____. </p>
-
+    <%= form_with url: flats_path, method: :get do %>
+    <p>Je veux voir les logements,<br>
+        à <%= text_field_tag :query,
+          params[:query],
+          class: "search-index",
+          style: "width: 60%",
+          placeholder: "Paris..."
+        %>
+       <br>
+        du
+          <%= text_field_tag :start_date,
+              params[:start_date],
+              class: "search-index",
+              placeholder: "...",
+              data: {controller: "datepicker"}
+            %>
+        <br>
+        au
+            <%= text_field_tag :end_date,
+                  params[:end_date],
+                  class: "search-index",
+                  placeholder: "...",
+                  data: {controller: "datepicker"}
+                %>
+          .
+          <%= button_tag(class: "btn") do %>
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #25316d;"></i>
+          <% end %>
+        <% end %>
+        </p>
   </div>
   <div class= "position-absolute bottom-0 end-0">
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "Flat Index", flats_path %>
+    <%= link_to "S'enregistrer", new_user_registration_path %>
+    <%= link_to "Se connecter", new_user_session_path %>
   </div>
 </div>
