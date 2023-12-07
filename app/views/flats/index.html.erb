@@ -26,7 +26,7 @@
                 </div>
               </div>
               <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
-                <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
+                <div class="flat-picture" style='background-image: url(<%= flat.pictures.split(" ")[0] %>);'>
                 </div>
               </a>
               <div class="flat-icons-price">
@@ -69,7 +69,7 @@
                 </div>
               </div>
               <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
-                <div class="flat-picture" style='background-image: url(<%= flat.pictures %>);'>
+                <div class="flat-picture" style='background-image: url(<%= flat.pictures.split(" ")[0] %>);'>
                 </div>
               </a>
               <div class="flat-icons-price">
