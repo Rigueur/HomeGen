@@ -3,3 +3,14 @@
   width: 40vw;
   top: 80px;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+  display: flex;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+}
