@@ -12,12 +12,27 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
   def index # Méthode index (URL = /modèle(s) = /flats), qui sert toujours à lister/montrer tous les modèles créés (= tous les appartements !)
 
     @flats = Flat.all # On crée une variable @flats, qui est un array, avec tous les flats dedans (Modèle.all) => (Flat.all)
-    
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
+
+    if params[:query].present?
+      if params[:start_date].present? && params[:end_date].present?
+        @flats = @flats.where("location ILIKE ?", "%#{params[:query]}%").select do |flat|
+          flat.bookings.none? do |booking|
+            booking.start_date <= Date.parse(params[:end_date]) && booking.end_date >= Date.parse(params[:start_date])
+          end
+        end
+        @flats = Flat.where(id: @flats.map(&:id))
+      else
+        @flats = @flats.where("location ILIKE ?", "%#{params[:query]}%")
+      end
+    end
+
+    unless @flats.empty?
+      @markers = @flats.geocoded.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      end
     end
   end
 
