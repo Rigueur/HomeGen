@@ -33,6 +33,10 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "skills" }%>
+    <%= f.input :biography,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "biography" }%>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
