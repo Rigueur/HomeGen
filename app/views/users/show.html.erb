@@ -6,14 +6,16 @@
                     <img src="<%= @user.avatar_url %>" width="150" height="150" class="rounded-circle" style="object-fit: cover;">
                 </div>
                 <div class="text-center mt-3">
-                    <span class="bg-dark px-4 py-2 mt-2 mb-2 rounded text-white">Host</span>
+                    <span class="bg-dark px-4 py-2 mt-2 mb-2 rounded text-white"><%= @user.old ? "Hôte" : "Locataire" %></span>
                     <h5 class="mt-4 mb-0" style="font-family: 'Krona One'"><%= @user.first_name %> <%= @user.last_name %></h5>
                     <div class="px-4 mt-3">
                         <p><%= @user.biography %></p>
                     </div>
-                    <div class="buttons">
-                        <button class="btn"><%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-primary px-4" %></button>
-                    </div>
+                    <%if current_user == @user %>
+                      <div class="buttons">
+                          <button class="btn"><%= link_to "Modifier", edit_user_registration_path, class: "btn btn-outline-primary px-4" %></button>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -36,8 +38,8 @@
         <div class="col-md-10 mt-5 mb-5">
             <div class="card p-3 py-4 bg-light h-100 w-100">
                 <div class="px-4 d-flex justify-content-left">
-                    <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-house" style="color: #25316D"></i>  Flat :</h5>
-                    <p class="ms-2 mb-0"><%= link_to @user.flats.name, flat_path(@user.flats) %></p>
+                    <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-house" style="color: #25316D"></i>  Annonce :</h5>
+                    <p class="ms-2 mb-0"><%= link_to @user.flats[0].name, flat_path(@user.flats[0]) %></p>
                 </div>
             </div>
         </div>

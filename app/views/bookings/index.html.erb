@@ -1,15 +1,31 @@
 <% if @bookings.empty? %>
-  <p>Vous n'avez pas encore de réservations.</p>
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5", style="width: 100%; height= 100%">
+  <div class="card mb-3" style="width: 1040px; border-radius: 20px; background-color: #EAF1F7">
+    <div class="card-body d-flex flex-column align-items-center">
+      <h5 class="card-title mb-3" style="">Vous n'avez pas encore de réservations.</h5>
+      <button class="btn btn-dark"><%= link_to "Réserver", flats_path, class: "text-decoration-none text-white"%></button>
+    </div>
+  </div>
+</div>
 <% else %>
-<ul>
 <% @bookings.each do |booking| %>
-  <li><%= image_tag booking.flat.pictures.split(" ")[0] %></li>
-  <li><%= booking.flat.name %></li>
-  <li><%= booking.flat.location %></li>
-  <li><%= booking.flat.description %></li>
-  <li><%= booking.start_date%></li>
-  <li><%= booking.end_date %></li>
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5", style="width: 100%; height= 100%">
+  <h1 class="mb-5" style="font-family: 'Krona One'; color: #25316D; ">Mes réservations :</h1>
+  <div class="card mb-3" style="width: 1040px; border-radius: 20px; background-color: #EAF1F7">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="<%= booking.flat.pictures.split(" ")[0] %>" class="card-img w-100 h-100" style="border-radius: 20px 0 0 20px;" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Krona One'; color: #25316D; font-size: 20px;"><%= link_to booking.flat.name, booking_path(booking), class:"card-title text-decoration-none" %></h5>
+          <p class="card-text"><%= booking.flat.description %></p>
+          <p class="card-text"><small class="text-muted"><%= booking.flat.location %></small></p>
+          <p class="card-text"><strong>Du <%= booking.start_date%> au <%= booking.end_date %></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <% end %>
 <% end %>
-</ul>
-<% end  %>
-
