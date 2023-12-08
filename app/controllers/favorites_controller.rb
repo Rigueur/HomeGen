@@ -11,8 +11,20 @@ class FavoritesController < ApplicationController
     @favorite.flat = @flat
     @favorite.user = current_user
     @favorite.save
-
-    redirect_to user_favorites_path(current_user)
+    flash.notice = "Ajouté aux favoris !"
+    redirect_to request.referrer
   end
 
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    flash.notice = "Retiré des favoris !"
+    redirect_to request.referrer
+  end
+end
+
+private
+
+def favorite_params
+  params.require(:favorite).permit(:flat_id)
 end

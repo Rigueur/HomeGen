@@ -9,4 +9,14 @@ class User < ApplicationRecord
   has_many :favorites
 
   validates :first_name, :last_name, :age, presence: true
+  after_validation :old?
+
+  def old?
+    if age > 40
+      self.old = true
+    else
+      self.old = false
+    end
+  end
+
 end

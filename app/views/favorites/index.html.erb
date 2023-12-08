@@ -5,5 +5,8 @@
     <p><%= favorite.flat.description %></p>
     <p><%= favorite.flat.location %></p>
     <p><%= favorite.flat.pictures %></p>
+    <%= link_to favorite_path(favorite), data: {turbo_method: :delete}, class: "text-decoration-none" do %>
+      <i class="fa-solid fa-trash" style="color: #25316d;"></i>
+    <% end %>
   </div>
 <% end %>

@@ -8,13 +8,14 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     # we need `flat_id` to associate booking with corresponding flat
     @booking.flat = @flat
     @booking.user = current_user
     if @booking.save
+      flash.notice = "Réservation effectuée !"
       redirect_to @flat
     else
       render :new, status: :unprocessable_entity
@@ -32,6 +33,7 @@ class BookingsController < ApplicationController
   def update
     @booking = current_user.bookings.find(params[:id])
     @booking.update(booking_params)
+    flash.notice = "Réservation mise à jour !"
     redirect_to @booking
   end
 
@@ -39,6 +41,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
     @booking.cancelled = true
     @booking.save
+    flash.notice = "Réservation annulée !"
     redirect_to @booking
   end
 
