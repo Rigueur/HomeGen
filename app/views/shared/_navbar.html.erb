@@ -53,8 +53,11 @@
         </a>
         <ul class="dropdown-menu">
           <% if current_user %>
-            <li><a class="dropdown-item" href="<%= user_user_flats_path(current_user) %>">Mon Annonce</a></li>
-            <li><a class="dropdown-item" href="<%= user_bookings_path(current_user) %>">Mes Réservations</a></li>
+            <%if current_user.old %>
+              <li><a class="dropdown-item" href="<%= user_user_flats_path(current_user) %>">Mon Annonce</a></li>
+            <%else%>
+              <li><a class="dropdown-item" href="<%= user_bookings_path(current_user) %>">Mes Réservations</a></li>
+            <%end%>
             <li><a class="dropdown-item" href="<%= user_path(current_user) %>">Mon Profil</a></li>
             <li><a class="dropdown-item" href="<%= destroy_user_session_path %>" data-turbo-method="delete">Log out</a></li>
           <%else%>
