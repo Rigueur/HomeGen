@@ -48,14 +48,28 @@
       </div>
       <div class="section-description">
         <i class="fa-solid fa-house fa-lg" style="color: brown;"></i>
-        <p>Hébergé par <i><%= link_to @flat.user.first_name + " " + @flat.user.last_name[0] + ".", user_path(@flat.user)%></i></p>
+        <p>Hébergé par <i><%= link_to @flat.user.first_name + " " + @flat.user.last_name[0] + ".", user_path(@flat.user)%></i>
+        <div class="rounded-circle" style="background-image: url(<%=@flat.user.avatar_url%>); width: 40px; height: 40px; background-size: cover; background-position: center;"></div>
+        </p>
       </div>
       <div class="section-description">
         <p><%= @flat.description %></p>
       </div>
       <div class="section-description">
         <i class="fa-solid fa-battery fa-lg" style="color: green;"></i>
-        <p><strong>Autonomie : <%= @flat.autonomy_level %>/5</strong></p>
+        <p><strong>Autonomie : <%= @flat.autonomy_level %>/5  -    </strong>
+        <% if @flat.autonomy_level == 1 %>
+          Cette personne a besoin d'aide pour les tâches du quotidien.
+        <% elsif @flat.autonomy_level == 2 %>
+          Cette personne a besoin d'aide pour certaines tâches du quotidien.
+        <% elsif @flat.autonomy_level == 3 %>
+          Cette personne a besoin d'aide pour certaines tâches hebdomadaires.
+        <% elsif @flat.autonomy_level == 4 %>
+          Cette personne est indépendante, mais aimerait de l'aide pour certaines tâches hebdomadaires légères.
+        <% else %>
+          Cette personne est indépendante.
+          <% end  %>
+        </p>
       </div>
       <div class="section-description">
         <p><i class="fa-solid fa-user fa-lg" style="color: brown;"></i> À propos de <i><%= @flat.user.first_name %></i> : <%= @flat.user.biography %></p>
@@ -82,7 +96,7 @@
                 as: :string,
                 input_html: { data: { controller: "datepicker" } } %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Book", class: "btn btn-outline-dark" %>
+            <%= f.submit "Réserver", class: "btn btn-outline-dark" %>
             </div>
           <% end %>
         <%end%>
