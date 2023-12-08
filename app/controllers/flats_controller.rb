@@ -40,6 +40,17 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
   def show # Méthode show (URL = modèle(s)/:id = /flats/1, /flats/2...), qui sert toujours à montrer un modèle créé en particulier (ici, un appartement)
 
     @flat = Flat.find(params[:id]) # Avec Modèle.find(params[:id]), on peut trouver un seul Flat, qu'on met dans la variable @flat.
+    @ratings = []
+    unless @flat.bookings.empty?
+      @flat.bookings.each do |booking|
+        unless booking.reviews.empty?
+          booking.reviews.each do |review|
+            @ratings << review.rating
+          end
+          @average_rating = @ratings.sum.fdiv(@ratings.size)
+        end
+      end
+    end
     @markers = [{lat: @flat.latitude, lng: @flat.longitude}]
   end
 
