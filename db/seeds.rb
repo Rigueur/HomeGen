@@ -193,7 +193,7 @@ Booking.new(start_date: "2022-03-10", end_date: "2022-04-20", flat_id: Flat.all[
 Booking.new(start_date: "2022-05-05", end_date: "2022-06-15", flat_id: Flat.all[9].id, user_id: User.all[12].id).save!
 Booking.new(start_date: "2022-07-01", end_date: "2022-08-10", flat_id: Flat.all[5].id, user_id: User.all[11].id).save!
 Booking.new(start_date: "2022-12-12", end_date: "2023-01-25", flat_id: Flat.all[1].id, user_id: User.all[11].id).save!
-Booking.new(start_date: "2023-02-18", end_date: "2023-03-30", flat_id: Flat.all[8].id, user_id: User.all[12].id).save!
+Booking.new(start_date: "2023-02-18", end_date: "2023-03-30", flat_id: Flat.all[1].id, user_id: User.all[12].id).save!
 Booking.new(start_date: "2023-02-18", end_date: "2023-03-30", flat_id: Flat.all[8].id, user_id: User.all[12].id).save!
 Booking.new(start_date: "2023-06-10", end_date: "2023-07-20", flat_id: Flat.all[6].id, user_id: User.all[12].id).save!
 Booking.new(start_date: "2023-04-15", end_date: "2023-05-28", flat_id: Flat.all[2].id, user_id: User.all[11].id).save!
