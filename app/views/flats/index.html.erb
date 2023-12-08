@@ -9,7 +9,7 @@
   </div>
 <%else%>
   <div class="d-flex">
-  <div>
+  <div data-bs-spy="scroll" data-bs-target="#flat-list" data-bs-offset="-5" data-bs-smooth-scroll="true">
     <% @flats.each_with_index do |flat, index| %>
       <div class="big-box">
         <div class="conteneur-card">
@@ -56,7 +56,7 @@
             </div>
             <div class="flat-descr">
               <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
-                <h2><%=flat.name%></h2>
+                <h2 id="flat-list-item-<%=flat.id%>"><%=flat.name%></h2>
               </a>
               <p><%=flat.description%></p>
               <h4>Autonomie : <%=flat.autonomy_level%>/5</h4>
@@ -64,7 +64,7 @@
           <% else %>
             <div class="flat-descr">
               <a href="<%=flat_path(flat)%>" class= "text-decoration-none">
-                <h2><%=flat.name%></h2>
+                <h2 id="flat-list-item-<%=flat.id%>"><%=flat.name%></h2>
               </a>
               <p><%=flat.description%></p>
               <h4>Autonomie : <%=flat.autonomy_level%>/5</h4>
@@ -117,7 +117,7 @@
     <% end %>
   </div>
   <div>
-  <div class="mapindex" style="position: sticky;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+  <div id="flat-list" class="mapindex" style="position: sticky;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   </div>
