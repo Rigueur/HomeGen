@@ -2,20 +2,20 @@
 
 <div class="d-flex align-items-center py-4 mt-5">
   <div class="form-signin w-50 m-auto">
-    <h2 style="font-family: 'Krona One'; color: #25316d; font-size: 25px; text-align: center">New flat</h2>
+    <h2 style="font-family: 'Krona One'; color: #25316d; font-size: 25px; text-align: center">Nouvelle annonce</h2>
 
     <%= simple_form_for(@flat) do |f|%>
       <div class="form-input">
-          <%= f.input :name %>
-          <%= f.input :location %>
+          <%= f.input :name, label: "Titre de l'annonce" %>
+          <%= f.input :location, label: "Adresse" %>
           <%= f.input :description %>
-          <%= f.input :price_per_month %>
-          <%= f.input :autonomy_level %>
-          <%= f.input :pictures, label: "Pictures (insert URLs, up to 5)" %>
+          <%= f.input :price_per_month, label: "Loyer par mois" %>
+          <%= f.input :autonomy_level, label: "Niveau d'autonomie" %>
+          <%= f.input :pictures, label: "Photos (mettre les URLs, jusqu'à 5)" %>
       </div>
 
       <div class="form-action">
-        <%= f.button :submit, "Create flat", class: 'btn-dark w-100 py-2 mb-2 mt-2' %>
+        <%= f.button :submit, "Enregistrer l'annonce", class: 'btn-dark w-100 py-2 mb-2 mt-2' %>
       </div>
     <% end %>
 
