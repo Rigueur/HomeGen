@@ -1,20 +1,15 @@
 <div class="flat-conteneur">
   <div class="pictures-conteneur">
-    <div class="picture-principale">
-      <p>Picture here...</p>
+    <div class="picture-principale" style="background-image: url(<%= image_path @flat.pictures.split(" ")[0] %>); background-size: cover;">
     </div>
     <div class="picture-grille">
-      <div class="picture-left-top">
-        <p>Picture here...</p>
+      <div class="picture-left-top" style="background-image: url(<%= image_path @flat.pictures.split(" ")[1] %>); background-size: cover;">
       </div>
-      <div class="picture-right-top">
-        <p>Picture here...</p>
+      <div class="picture-right-top" style="background-image: url(<%= image_path @flat.pictures.split(" ")[2] %>); background-size: cover;">
       </div>
-      <div class="picture-left-down">
-        <p>Picture here...</p>
+      <div class="picture-left-down" style="background-image: url(<%= image_path @flat.pictures.split(" ")[3] %>); background-size: cover;">
       </div>
-      <div class="picture-right-down">
-        <p>Picture here...</p>
+      <div class="picture-right-down" style="background-image: url(<%= image_path @flat.pictures.split(" ")[4] %>); background-size: cover;">
       </div>
     </div>
   </div>
