@@ -27,5 +27,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
+  resources :favorites, only: [:destroy]
+
   patch  "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end

@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(params)
     @review.booking = @booking
     @review.save
+    flash.notice = "Avis ajouté !"
     redirect_to flats_path # rediriger à l'index des bookings du user
   end
 

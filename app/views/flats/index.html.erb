@@ -31,8 +31,20 @@
               </a>
               <div class="flat-icons-price">
                 <div class="card-icons">
-                  <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
-                    <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                  <% if current_user%>
+                    <% if current_user.favorites.map(&:flat_id).include?(flat.id) %>
+                      <%= link_to favorite_path(current_user.favorites.find_by(flat_id: flat.id)), data: {turbo_method: :delete}, class: "text-decoration-none" do %>
+                        <i class="fa-solid fa-heart fa-xl" style="color: #25316d;"></i>
+                      <% end %>
+                    <%else%>
+                      <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+                        <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                      <% end %>
+                    <% end %>
+                  <%else%>
+                    <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+                      <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                    <% end %>
                   <% end %>
                   <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
                   <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>
@@ -74,8 +86,20 @@
               </a>
               <div class="flat-icons-price">
                 <div class="card-icons">
-                  <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
-                    <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                  <% if current_user%>
+                    <% if current_user.favorites.map(&:flat_id).include?(flat.id) %>
+                      <%= link_to favorite_path(current_user.favorites.find_by(flat_id: flat.id)), data: {turbo_method: :delete}, class: "text-decoration-none" do %>
+                        <i class="fa-solid fa-heart fa-xl" style="color: #25316d;"></i>
+                      <% end %>
+                    <%else%>
+                      <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+                        <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                      <% end %>
+                    <% end %>
+                  <%else%>
+                    <%= link_to flat_favorites_path(flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+                      <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+                    <% end %>
                   <% end %>
                   <i class="fa-solid fa-pen-to-square fa-xl" style="color: #25316d;"></i>
                   <i class="fa-regular fa-message fa-xl" style="color: #25316d;"></i>

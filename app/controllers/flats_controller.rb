@@ -61,6 +61,7 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
 
     if @flat.save # Ici, on dit --> "Si on peut sauvegarder le nouveau Flat (@flat.save), redirigige vers 'flats_path', sinon, met un message comme quoi ça a pas marché"
 
+      flash.notice = "Annonce créée !"
       redirect_to flats_path # flats_path c'est une route qui redirige vers tous les flats (index), tu peux checker les routes avec la commande rails routes
 
     else
@@ -83,6 +84,7 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
+    flash.notice = "Annonce éffacée !" # flash.notice, c'est un message qui s'affiche en haut de la page quand tu fais une action (ici, quand tu supprimes un flat)
     redirect_to flats_path
   end
 

@@ -21,7 +21,9 @@
   <div class="bottom-conteneur">
     <div class="description-card">
       <div class="section-description">
-        <h2><%= flat.name %></h2>
+        <h2><%= flat.name %>
+        <%= link_to "Edit", edit_flat_path(flat) %>
+        </h2>
       </div>
       <div class="section-description">
         <i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i>

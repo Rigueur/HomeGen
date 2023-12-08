@@ -21,10 +21,22 @@
   <div class="bottom-conteneur">
     <div class="description-card">
       <div class="section-description">
-        <h2><%= @flat.name %>   <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post} do %>
-            <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+        <h2><%= @flat.name %>
+          <% if current_user%>
+            <% if current_user.favorites.map(&:flat_id).include?(@flat.id) %>
+              <%= link_to favorite_path(current_user.favorites.find_by(flat_id: @flat.id)), data: {turbo_method: :delete}, class: "text-decoration-none" do %>
+                <i class="fa-solid fa-heart fa-xl" style="color: #25316d;"></i>
+              <% end %>
+            <%else%>
+              <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+                <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+              <% end %>
+            <% end %>
+          <%else%>
+            <%= link_to flat_favorites_path(@flat), data: {turbo_method: :post}, class: "text-decoration-none" do %>
+              <i class="fa-regular fa-heart fa-xl" style="color: #25316d;"></i>
+            <% end %>
           <% end %>
-          <%= link_to "Edit", edit_flat_path(@flat) %>
         </h2>
       </div>
       <div class="section-description">
