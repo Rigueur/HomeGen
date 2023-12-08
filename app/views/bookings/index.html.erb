@@ -23,11 +23,18 @@
           <p class="card-text"><%= booking.flat.description %></p>
           <p class="card-text"><small class="text-muted"><%= booking.flat.location %></small></p>
           <p class="card-text"><strong>Du <%= booking.start_date%> au <%= booking.end_date %></strong></p>
-<% if booking.cancelled %>
-    <p style="color: red;">Cette réservation a été annulée</p>
-  <% else %>
-    <%= link_to 'Annuler la réservation', cancel_booking_path(booking), data: {turbo_method: :patch, turbo_confirm: 'Are you sure?' } %>
-  <% end %>        </div>
+          <% if booking.reviews.empty?%>
+            <%= link_to "Laisser un avis", "#", class: "btn btn-dark" %> <br>
+            <%# new_booking_review_path(booking) %>
+          <% else %>
+            <p style="color: green;">Vous avez déjà laissé un avis.</p>
+          <% end %>
+          <% if booking.cancelled %>
+            <p style="color: red;">Cette réservation a été annulée</p>
+          <% else %>
+            <%= link_to 'Annuler la réservation', cancel_booking_path(booking), data: {turbo_method: :patch, turbo_confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

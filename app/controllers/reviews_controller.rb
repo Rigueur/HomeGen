@@ -8,16 +8,17 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(params)
+    @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     @review.save
     flash.notice = "Avis ajouté !"
-    redirect_to flats_path # rediriger à l'index des bookings du user
+    redirect_to user_bookings_path(current_user)
   end
 
   private
 
   def params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :booking_id)
   end
 
 end
