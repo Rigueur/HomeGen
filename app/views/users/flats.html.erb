@@ -18,7 +18,7 @@
     <div class="description-card">
       <div class="section-description">
         <h2><%= flat.name %>
-        <%= link_to "Edit", edit_flat_path(flat) %>
+        <%= link_to "Modifier", edit_flat_path(flat) %>
         </h2>
       </div>
       <div class="section-description">
@@ -45,11 +45,22 @@
           <div class="map-display" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
-        <div class="section-description">
+        <div class="section-description pt-2">
+          <% if flat.bookings.any? %>
+            <ul>
+            <% flat.bookings.each do |booking| %>
+              <li>Réservé du <%= booking.start_date %> au <%= booking.end_date %></li>
+            <% end %>
+            </ul>
+          <% else %>
+            <p>Ce logement n'est pas encore réservé</p>
+          <% end %>
+        </div>
+        <div class="section-description pt-4">
           <% flat.bookings.each do |booking| %>
             <% booking.reviews.each do |review| %>
               <%= review.content %> <br>
-              Rating : <%= review.rating %> / 5
+              Note : <%= review.rating %> / 5
             <% end %>
           <% end %>
         </div>
@@ -60,24 +71,13 @@
           <h4><strong><%= flat.price_per_month %>€ / mois</strong></h4>
         </div>
       </div>
-      <button class="btn btn-outline-danger mt-2 w-75" style="position: sticky;"><%= link_to 'Delete flat', flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, style: 'text-decoration: none; color: black'%></button>
+      <% if flat.user == current_user %>
+        <button class="btn btn-outline-danger mt-2 w-75" style="position: sticky; top:350px;"><%= link_to 'Supprimer l\'annonce', flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, style: 'text-decoration: none; color: black'%></button>
+      <% end %>
     </div>
   </div>
   <% if @flats.empty? %>
-    <%= link_to 'New Flat', new_flat_path, class: 'btn btn-primary' %>
+    <%= link_to 'Nouvelle annonce', new_flat_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
-  <% if flat.user == current_user %>
-  <div class="section-description">
-    <i class="fa-solid fa-trash fa-lg" style="color: red;"></i>
-    <%= link_to 'Delete', flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-  </div>
-  <% end %>
-  <% if flat.bookings.any? %>
-    <ul>
-    <% flat.bookings.each do |booking| %>
-      <li>Réservé du <%= booking.start_date %> au <%= booking.end_date %></li>
-    <% end %>
-    </ul>
-  <% end %>
 <% end  %>
