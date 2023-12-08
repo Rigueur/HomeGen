@@ -88,7 +88,11 @@ Flat.new(name: "Cosy proche campus",
   price_per_month: 400,
   autonomy_level: 3,
   user_id: User.all[4].id,
-  pictures: "https://www.student-factory.com/media/457/download/StudentFactory_Nice_DSF8115-HDR.jpg?v=1").save
+  pictures: "https://a0.muscache.com/im/pictures/airflow/Hosting-644005121824253366/original/4de26250-2edf-46cb-a5e2-2a6173890533.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/airflow/Hosting-644005121824253366/original/f979373b-ae40-44d0-805b-e013d0f7d1d3.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/airflow/Hosting-644005121824253366/original/087e200b-8fc8-4d4a-99c8-5297b7f53123.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-644005121824253366/original/6a6063ea-8637-49ca-8b6f-2c6a15d2c95e.jpeg?im_w=1200
+  https://a0.muscache.com/im/pictures/airflow/Hosting-644005121824253366/original/168d8fa5-97ea-4129-b52b-d78695807043.jpg?im_w=720").save
 puts "4"
 
 Flat.new(name: "Spacieux quartier historique",
@@ -97,7 +101,11 @@ Flat.new(name: "Spacieux quartier historique",
   price_per_month: 300,
   autonomy_level: 1,
   user_id: User.all[5].id,
-  pictures: "https://thumbs.dreamstime.com/z/chambre-%C3%A0-coucher-de-style-de-l-%C3%A9tudiant-simple-de-dortoir-avec-un-bon-nombre-de-lumi%C3%A8re-79798617.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/4d517803-feba-4c2f-9b8c-d1f804cca4fa.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/miso/Hosting-825460423727559361/original/b063b46f-accb-438c-8244-a44952546f73.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/af4359f0-1e6d-4167-bb76-c9bcb6e7b95b.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/a87e34d6-40ca-462d-beac-1d062a3bb33a.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/91e28984-a632-4104-be9e-e4d035723c73.jpg?im_w=1200").save
 puts "5"
 
 Flat.new(name: "Lumineux ambiance moderne",
@@ -106,7 +114,11 @@ Flat.new(name: "Lumineux ambiance moderne",
   price_per_month: 350,
   autonomy_level: 2,
   user_id: User.all[6].id,
-  pictures: "https://amazingarchitecture.com/storage/1790/student_room.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/miso/Hosting-979604975045770437/original/5691fb69-c634-4184-9036-43f3fb0a2e71.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-979604975045770437/original/510f6ca5-669d-430e-a784-e859c0e29836.jpeg?im_w=1200
+  https://a0.muscache.com/im/pictures/miso/Hosting-979604975045770437/original/66316a2f-a062-4372-89b0-bb605fb8e62c.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-979604975045770437/original/1bdae942-fdd9-4d06-a10d-f2773411f296.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-979604975045770437/original/1a781cbb-d615-4a7b-9660-3e176d71443b.jpeg?im_w=1200").save
 puts "6"
 
 Flat.new(name: "Confortable près commerces",
@@ -115,7 +127,11 @@ Flat.new(name: "Confortable près commerces",
   price_per_month: 300,
   autonomy_level: 3,
   user_id: User.all[7].id,
-  pictures: "https://www.new.ox.ac.uk/sites/default/files/inline-images/Bedroom_0.JPG").save
+  pictures: "https://a0.muscache.com/im/pictures/hosting/Hosting-1004703074292030375/original/254f48a7-0770-465a-986b-e344fe634581.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/6fc91a75-74f5-48fc-817b-23b4004569f7.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/6b4fe926-be54-436c-a25e-d511d9888733.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/hosting/Hosting-1004703074292030375/original/0a8a757b-eb13-4dac-aa08-650611c5a262.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/88a3db8a-c6e7-4acc-a12f-511eb908ac2e.jpg?im_w=1200").save
 puts "7"
 
 Flat.new(name: "Studio élégant meublé",
@@ -124,7 +140,11 @@ Flat.new(name: "Studio élégant meublé",
   price_per_month: 600,
   autonomy_level: 4,
   user_id: User.all[8].id,
-  pictures: "https://www.nottingham.ac.uk/accommodation/images-multimedia/new-test/room-3.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/d291fdfb-44d6-4fc0-b373-f7c86b766fe1.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/108036961/11962675_original.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/108036172/e49ca770_original.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/109761638/b6aabcb2_original.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/109761438/1ad60cb4_original.jpg?im_w=1200").save
 puts "8"
 
 Flat.new(name: "Calme, vue jardin",
@@ -133,7 +153,11 @@ Flat.new(name: "Calme, vue jardin",
   price_per_month: 250,
   autonomy_level: 1,
   user_id: User.all[0].id,
-  pictures: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e800a328914065.55d8b7ced5d02.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/miso/Hosting-835341352670168881/original/1a2d004e-5a8c-4937-aa2e-a672ee235219.jpeg?im_w=1200
+  https://a0.muscache.com/im/pictures/miso/Hosting-835341352670168881/original/6e3c7f25-cf19-4306-85ad-57f2cdc89b76.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-835341352670168881/original/d5d1a3d5-6753-42b5-a648-00ec8414e2c7.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-835341352670168881/original/805c8d37-f9d7-4ca3-bed1-b169889307af.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-835341352670168881/original/aa9136d1-fe1e-422b-a821-b50304dcb106.jpeg?im_w=1200").save
 puts "9"
 
 Flat.new(name: "Chambre étudiant idéale",
@@ -142,7 +166,11 @@ Flat.new(name: "Chambre étudiant idéale",
   price_per_month: 800,
   autonomy_level: 5,
   user_id: User.all[9].id,
-  pictures: "https://www.cityblock.co.uk/blog/wp-content/uploads/2022/11/34-1024x684.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/65955586/97a31872_original.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/65955780/923494bd_original.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/70067594/c0e92c2e_original.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/70067850/8c232bf3_original.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/65956789/5d51eb50_original.jpg?im_w=720").save
 puts "10"
 
 Flat.new(name: "Cherche Etudiant Discret!",
@@ -151,7 +179,11 @@ Flat.new(name: "Cherche Etudiant Discret!",
   price_per_month: 400,
   autonomy_level: 3,
   user_id: User.all[9],
-  pictures: "https://www.vitastudent.com/wp-content/uploads/2023/01/VITASTUDENT_PROFILES_NOV2021_130-scaled.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/e6130435-dbe1-4ab6-8c54-1dd317d7d7f1.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/7c504da9-f86e-43ae-89db-534e2b8ff21c.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/20accaa1-b6a6-4295-8a4e-8db8bbbea86a.jpg?im_w=720
+  https://a0.muscache.com/im/pictures/73f2f2f7-df0e-4909-bba1-e411fb70e405.jpg?im_w=1200
+  https://a0.muscache.com/im/pictures/e81a1160-1c52-4996-bf52-1b9006c62468.jpg?im_w=1200").save
 
 puts "Creating bookings..."
 Booking.new(start_date: "2021-01-01", end_date: "2021-01-31", flat_id: Flat.all[9].id, user_id: User.all[11].id).save!
