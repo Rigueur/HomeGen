@@ -39,7 +39,7 @@
             <div class="card p-3 py-4 bg-light h-100 w-100">
                 <div class="px-4 d-flex justify-content-left">
                     <h5 class="m-0 text-align-center" style="font-family: 'Krona One';"><i class="fa-solid fa-house" style="color: #25316D"></i>  Annonce :</h5>
-                    <p class="ms-2 mb-0"><%= link_to @user.flats[0].name, flat_path(@user.flats[0]) %></p>
+                    <p class="ms-2 mb-0"><%= link_to @user.flats[0].name, flat_path(@user.flats[0]) unless @user.flats.empty? %></p>
                 </div>
             </div>
         </div>

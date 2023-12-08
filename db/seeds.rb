@@ -79,7 +79,11 @@ Flat.new(name: "Vue panoramique centre",
   price_per_month: 600,
   autonomy_level: 4,
   user_id: User.all[3].id,
-  pictures: "https://www.passman.fr/wp-content/uploads/2023/10/passenergy-residence-etudiante-e1696258374658.jpg").save
+  pictures: "https://a0.muscache.com/im/pictures/miso/Hosting-46937009/original/0238f5b6-55a0-458c-8eb4-8b50f2aa4a85.jpeg?im_w=1200
+  https://a0.muscache.com/im/pictures/miso/Hosting-46937009/original/a91584c0-dbf9-4ffe-8aa0-9f31662f9352.jpeg?im_w=1200
+  https://a0.muscache.com/im/pictures/miso/Hosting-46937009/original/2a47fb2a-b0e1-4b9b-90fb-78957f362d7d.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-46937009/original/1260d624-96bd-4ef3-9167-8bb645cd46d8.jpeg?im_w=720
+  https://a0.muscache.com/im/pictures/miso/Hosting-46937009/original/cca5b555-cac8-43d7-80a4-71f1b54c4513.jpeg?im_w=720").save
 puts "3"
 
 Flat.new(name: "Cosy proche campus",

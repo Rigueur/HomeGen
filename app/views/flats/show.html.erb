@@ -36,7 +36,11 @@
       </div>
       <div class="section-description">
         <i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i>
-        <p><strong>4.8 en moyenne</strong></p>
+        <% if @average_rating %>
+        <p><strong><%= @average_rating %></strong></p>
+        <% else %>
+        <p><strong>Pas de note pour le moment</strong></p>
+        <% end %>
       </div>
       <div class="section-description">
         <i class="fa-solid fa-location-pin fa-lg" style="color: #25316d;"></i>
