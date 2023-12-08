@@ -52,7 +52,9 @@ class FlatsController < ApplicationController # Controlleur Flats, généré ave
         end
       end
     end
-    @markers = [{lat: @flat.latitude, lng: @flat.longitude}]
+    @markers = [{lat: @flat.latitude,
+    lng: @flat.longitude,
+    marker_html: render_to_string(partial: "marker", locals: {flat: @flat})}]
   end
 
   def new # Méthode new (URL = modèle(s)/new = flats/new), qui sert toujours à récupérer les infos pour créer un nouveau Modèle (nouveau Flat)
