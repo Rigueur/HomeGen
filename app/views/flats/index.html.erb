@@ -17,7 +17,7 @@
             <div class="flat-card">
               <div class="top-card">
                 <div class="flat-profile">
-                  <img class="avatar" src="<%=flat.user.avatar_url%>">
+                  <div class="rounded-circle" style="background-image: url(<%=flat.user.avatar_url%>); width: 30px; height: 30px; background-size: cover; background-position: center;"></div>
                   <p><%= link_to flat.user.first_name + " " + flat.user.last_name[0] + ".", user_path(flat.user)%></p>
                 </div>
                 <div class="flat-locality">
@@ -72,7 +72,7 @@
             <div class="flat-card">
               <div class="top-card">
                 <div class="flat-profile">
-                  <img class="avatar" src="<%=flat.user.avatar_url%>">
+                  <div class="rounded-circle" style="background-image: url(<%=flat.user.avatar_url%>); width: 30px; height: 30px; background-size: cover; background-position: center;"></div>
                   <p><%= link_to flat.user.first_name + " " + flat.user.last_name[0] + ".", user_path(flat.user)%></p>
                 </div>
                 <div class="flat-locality">
