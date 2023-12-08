@@ -76,8 +76,11 @@
       <% end %>
     </div>
   </div>
-  <% if @flats.empty? %>
-    <%= link_to 'Nouvelle annonce', new_flat_path, class: 'btn btn-primary' %>
-  <% end %>
 </div>
 <% end  %>
+
+<% if @flats.empty? %>
+  <div class="flat-conteneur">
+    <%= link_to 'Nouvelle annonce', new_flat_path, class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

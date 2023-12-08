@@ -48,7 +48,9 @@
       </div>
       <div class="section-description">
         <i class="fa-solid fa-house fa-lg" style="color: brown;"></i>
-        <p>Hébergé par <i><%= link_to @flat.user.first_name + " " + @flat.user.last_name[0] + ".", user_path(@flat.user)%></i></p>
+        <p>Hébergé par <i><%= link_to @flat.user.first_name + " " + @flat.user.last_name[0] + ".", user_path(@flat.user)%></i>
+        <div class="rounded-circle" style="background-image: url(<%=@flat.user.avatar_url%>); width: 40px; height: 40px; background-size: cover; background-position: center;"></div>
+        </p>
       </div>
       <div class="section-description">
         <p><%= @flat.description %></p>
@@ -103,7 +105,7 @@
                 as: :string,
                 input_html: { data: { controller: "datepicker" } } %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Book", class: "btn btn-outline-dark" %>
+            <%= f.submit "Réserver", class: "btn btn-outline-dark" %>
             </div>
           <% end %>
         <%end%>
