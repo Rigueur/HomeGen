@@ -22,6 +22,15 @@
         </h2>
       </div>
       <div class="section-description">
+          <% if flat.bookings.any? %>
+            <% flat.bookings.each do |booking| %>
+              <p><i class="fa-solid fa-calendar fa-lg" style="color: #25316d;"></i>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            <% end %>
+          <% else %>
+            <p>Ce logement n'est pas encore réservé</p>
+          <% end %>
+        </div>
+      <div class="section-description">
         <i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i>
         <p><strong>4.8 en moyenne</strong></p>
       </div>
@@ -45,25 +54,6 @@
           <div class="map-display" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
-        <div class="section-description pt-2">
-          <% if flat.bookings.any? %>
-            <ul>
-            <% flat.bookings.each do |booking| %>
-              <li>Réservé du <%= booking.start_date %> au <%= booking.end_date %></li>
-            <% end %>
-            </ul>
-          <% else %>
-            <p>Ce logement n'est pas encore réservé</p>
-          <% end %>
-        </div>
-        <div class="section-description pt-4">
-          <% flat.bookings.each do |booking| %>
-            <% booking.reviews.each do |review| %>
-              <%= review.content %> <br>
-              Note : <%= review.rating %> / 5
-            <% end %>
-          <% end %>
-        </div>
       </div>
     <div class="book-container d-flex flex-column w-25 align-items-center" style="height: 300px; position: sticky; top: 80px;">
       <div class="book-card w-75 h-75">
@@ -79,5 +69,26 @@
   <% if @flats.empty? %>
     <%= link_to 'Nouvelle annonce', new_flat_path, class: 'btn btn-primary' %>
   <% end %>
+
+  <div class="bottom-conteneur" style="width: 84vw; margin: 0 auto;">
+    <div class="description-card">
+      <h2 style="font-family: 'Krona One'; font-size: 28px; color: #25316d">Reviews: </h2>
+        <% flat.bookings.each do |booking| %>
+        <% if booking.reviews.empty? %>
+      <div class="section-description">
+        <p>Pas de reviews pour le moment.</p>
+      </div>
+        <% else %>
+          <% booking.reviews.each do |review| %>
+      <div class="section-description">
+        <p><i class="fa-solid fa-star fa-lg" style="color: #e6c700;"></i><%= review.rating %> / 5  - <%= review.content %> <br></p>
+      </div>
+      <% end %>
+    <% end %>
+    <% end %>
+    </div>
+    <div class="book-card" style="background-color: #fafafa; border: 0; box-shadow: 0 0 0 rgba(0,0,0,0);">
+    </div>
+  </div>
 </div>
 <% end  %>
