@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
     @booking.cancelled = true
     @booking.save
     flash.notice = "Réservation annulée !"
-    redirect_to @booking
+    redirect_to request.referrer
   end
 
   private
